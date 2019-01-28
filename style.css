@@ -1,0 +1,123 @@
+/* IMPORTS */
+@import "_reset.css";
+
+/* GENERAL STYLES *******************************************/
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #FFFFFF;
+    color: grey;
+    font-family: 'Roboto Mono', 'Helvetica', Arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #2d2d2d;
+    font-weight: 500;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-bottom: .2em;
+}
+a,a:visited {
+    color: #4A90E2;
+    outline: none;
+}
+
+/* MAIN CONTAINER ******************************************/
+.main-container,
+#profile,
+footer {
+    margin: 0 auto;
+    max-width: 80rem;
+}
+
+/* PROFILE */
+#profile {
+    /* border-bottom: 1px solid lightgrey; */
+    margin-bottom: 2em;
+    padding: 1em;
+}
+#profile .avatar {
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 1em;
+    vertical-align: middle;
+    width: 100px;
+}
+#profile .content-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+#profile h2 {
+    font-size: 1.4rem;
+    margin-bottom: .2em;
+}
+
+/* SHOTS **************************************************/
+.shots-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.shots-container .shot-item {
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: calc(25% - 40px);
+}
+.shots-container .shot-item:hover {
+    box-shadow: 0 5px 40px rgba(0,0,0,0.25);
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+.shots-container .shot-item img {
+    height: 100%;
+    width: 100%;
+}
+
+/* FOOTER **************************************************/
+footer {
+    border-top: 1px solid lightgrey;
+    padding: 2em;
+    text-align: center;
+    width: 100%;
+}
+footer p {
+    font-size: .8rem;
+}
+
+/* MEDIA QUERIES *******************************************/
+@media(max-width:960px) {
+    .shots-container .shot-item {
+        width: calc(33.33% - 40px);
+    }
+}
+
+@media(max-width:750px) {
+    .shots-container .shot-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media(max-width:500px) {
+    .profile {
+        text-align: center;
+    }
+    .profile .avatar {
+        display: block;
+        margin: 0 auto;
+    }
+    .shots-container .shot-item {
+        display: block;
+        width: calc(100% - 40px);
+    }
+    .shots-container .shot-item:hover {
+        transform: none;
+    }
+}
